@@ -1,5 +1,16 @@
-<ul>
-<% @cocktails.each do |cocktail| %>
-    <li><%= cocktail.name %></li>
+<% @cocktails.each do |cocktail| %>    
+    <div class="container mt-4 bg-dark">
+        <div class="row">
+            <div class="col-sm">
+                <div class="card" style="width: 18rem;">
+                <%# <img src="..." class="card-img-top" alt="..."> %>
+                    <div class="card-body">
+                        <h5 class="card-title text-dark"><%= cocktail.name %></h5>
+                        <p></p>
+                        <%= link_to "Details", cocktail_path(cocktail), class: "btn btn-link btn-teal" %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 <% end %>
-</ul>

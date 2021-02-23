@@ -19,12 +19,6 @@ before_action :set_cocktail, only: [:show]
     end
 
     def show
-        @doses = @cocktail.doses.map do |dose|
-            {
-                ingredient: Ingredient.find(dose.ingredient_id)[:name],
-                description: dose.description
-            }
-        end
     end
 
     private

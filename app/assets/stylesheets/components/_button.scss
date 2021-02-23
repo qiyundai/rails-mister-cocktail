@@ -1,0 +1,13 @@
+.btn-gold {
+    background-color: $gold;
+    color: black;
+}
+
+.btn-teal {
+    background-color: $teal;
+    color: honeydew;
+    &:hover {
+        color: $gold;
+        transition: 0.5s;
+    }
+}
