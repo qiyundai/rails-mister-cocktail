@@ -1,3 +1,8 @@
-.card-index {
-    background-image: url('https://picsum.photos/1200/300?grayscale'), no-repeat;
+.card-block {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= cl_image_path @cocktail.picture.key, height: 200, crop: :fill %>');
+    height: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }

@@ -19,6 +19,7 @@ before_action :set_cocktail, only: [:show, :edit, :update]
     end
 
     def show
+        raise
     end
 
     def edit
@@ -35,6 +36,6 @@ before_action :set_cocktail, only: [:show, :edit, :update]
     end
 
     def strong_params
-        params.require(:cocktail).permit(:name)
+        params.require(:cocktail).permit(:name, :picture)
     end
 end
