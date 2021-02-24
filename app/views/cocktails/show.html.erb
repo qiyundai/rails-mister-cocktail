@@ -4,25 +4,35 @@
             <%= @cocktail.name %>
         </h1>
         <div>
-            <% @cocktail.doses.each do |dose| %>
-            <p>
-            <%= Ingredient.find(dose[:ingredient_id])[:name] %> - 
-            <%= dose[:description] %> 
-            <%= link_to dose_path(dose), 
-                class: "text-light",
-                method: :delete,
-                data: { confirm: "Are you sure?" } do %>
-                <i class="far fa-trash-alt"></i>
-            <% end %>
-            </p>
-        <% end %>
-        </div>
-        <div>
-            <%= link_to new_cocktail_dose_path(@cocktail), class: "text-light" do %>
-                <i class="fas fa-plus-square"></i> ingredient
-            <% end %>
+            <div>
+                <%= link_to new_cocktail_dose_path(@cocktail), class: "text-light" do %>
+                    <i class="fas fa-pen-square"></i> edit name
+                <% end %>
+            </div>
+            <div>
+                <%= link_to new_cocktail_dose_path(@cocktail), class: "text-light" do %>
+                    <i class="fas fa-plus-square"></i> add ingredient
+                <% end %>            
+            </div>
+
         </div>
     </div>
+</div>
+
+<div class="container p-4 text-dark">
+    <h2>Our Recipe:</h2>
+    <% @cocktail.doses.each do |dose| %>
+        <p>
+        <%= Ingredient.find(dose[:ingredient_id])[:name] %> - 
+        <%= dose[:description] %> 
+        <%= link_to dose_path(dose), 
+            class: "text-dark",
+            method: :delete,
+            data: { confirm: "Are you sure?" } do %>
+            <i class="far fa-trash-alt"></i>
+        <% end %>
+        </p>
+    <% end %>
 </div>
 
 
