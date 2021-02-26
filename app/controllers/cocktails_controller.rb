@@ -19,7 +19,6 @@ before_action :set_cocktail, only: [:show, :edit, :update]
     end
 
     def show
-        raise
     end
 
     def edit

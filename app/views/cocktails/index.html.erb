@@ -7,8 +7,8 @@
 
 </div>
 
-<% @cocktails.each do |cocktail| %>    
-    <div class="container mt-4 shadow-sm card-block">
+<% @cocktails.each do |cocktail| %>
+    <div class="container bg-dark mt-4 shadow-sm card-block" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= cl_image_path cocktail.picture.key, height: 200, crop: :fill %>')">
         <div class="row">
             <div class="col-sm">
                 <div class="card" style="width: 280px;">
